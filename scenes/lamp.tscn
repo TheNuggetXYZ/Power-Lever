@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhpxs4ibwchar"]
+
+[ext_resource type="PackedScene" uid="uid://bnry5yrp8ruwu" path="res://graphics/models/lamp.fbx" id="1_72t4t"]
+
+[node name="lamp" unique_id=555993460 instance=ExtResource("1_72t4t")]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." index="3" unique_id=1272659481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6251778, 0.2752266, 1.2156143)
+radius = 0.15
