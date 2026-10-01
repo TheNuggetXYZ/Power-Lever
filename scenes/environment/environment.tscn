@@ -19,8 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, 0)
 operation = 2
 size = Vector3(2.7, 0.9, 1)
 
-[node name="lamp" parent="." unique_id=555993460 instance=ExtResource("1_bc5iu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -8)
-
 [node name="power_box" parent="." unique_id=1553650439 instance=ExtResource("2_fm4en")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.75, -10)
+
+[node name="lamp" parent="." unique_id=555993460 instance=ExtResource("1_bc5iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4380803, -8)
