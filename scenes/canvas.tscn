@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cdw804tt60b5l"]
+
+[ext_resource type="Script" uid="uid://du6m7no6yl823" path="res://scripts/gui/Canvas.cs" id="1_7axt1"]
+[ext_resource type="Material" uid="uid://ocip24phahnv" path="res://graphics/materials/fullscreen_PSX_mat.tres" id="2_owpp6"]
+
+[node name="Canvas" type="CanvasLayer" unique_id=1484883035]
+script = ExtResource("1_7axt1")
+
+[node name="Shader" type="ColorRect" parent="." unique_id=1283762674]
+material = ExtResource("2_owpp6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
