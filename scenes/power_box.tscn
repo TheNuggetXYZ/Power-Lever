@@ -14,7 +14,7 @@ transform = Transform3D(5.9604645e-06, 100, 2.9802322e-06, -2.9802322e-06, 0, 10
 surface_material_override/0 = ExtResource("2_v8vcw")
 
 [node name="Cube_003" parent="." index="2" unique_id=48388654]
-transform = Transform3D(-99.99948, -0.31746885, -2.3283064e-08, 0, 0, 99.99999, -0.31746885, 99.99949, 1.1920929e-05, -0.7381962, -0.337897, 0.31192935)
+transform = Transform3D(-0.31746447, 99.99949, 1.1920929e-05, 0, 0, 100.00001, 99.99948, 0.31746447, 2.328254e-08, -0.7381962, -0.337897, 0.31192935)
 surface_material_override/0 = ExtResource("2_v8vcw")
 
 [node name="Cube_004" parent="." index="3" unique_id=1119577128]
