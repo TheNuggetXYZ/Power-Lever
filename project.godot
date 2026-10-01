@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Power Lever"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="uid://cjmp1uigpmaqg"
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 
 [display]
 

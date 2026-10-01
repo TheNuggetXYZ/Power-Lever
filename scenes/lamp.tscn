@@ -2,8 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://bnry5yrp8ruwu" path="res://graphics/models/lamp.fbx" id="1_72t4t"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72t4t"]
+emission_enabled = true
+emission = Color(1, 1, 0.23529412, 1)
+emission_energy_multiplier = 3.0
+
 [node name="lamp" unique_id=555993460 instance=ExtResource("1_72t4t")]
 
+[node name="Line001_INSTALOD_INSTALOD" parent="." index="0" unique_id=1335820047]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.3653353, 0)
+
+[node name="Line002_INSTALOD_INSTALOD" parent="." index="1" unique_id=1618279523]
+transform = Transform3D(-2.2113981e-07, -4.537229e-08, -1.8550551, -3.29524e-15, 1.037997, -8.108704e-08, 1.8550551, -5.5315592e-15, -2.2113981e-07, 0, 1.9803773, 0)
+
+[node name="Cylinder001_INSTALOD_INSTALOD" parent="." index="2" unique_id=383634237]
+transform = Transform3D(1.0387, 0, 0, 0, 0, 1.0387, 0, -1.0387, 0, 0, 3.3163843, 0)
+
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." index="3" unique_id=1272659481]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6251778, 0.2752266, 1.2156143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2752266, 0)
 radius = 0.15
+material = SubResource("StandardMaterial3D_72t4t")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="4" unique_id=1377792465]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.2752266, 0)
+light_energy = 3.0
+spot_range = 6.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="5" unique_id=471630228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2752266, 0)
+light_energy = 0.3
+omni_range = 1.0

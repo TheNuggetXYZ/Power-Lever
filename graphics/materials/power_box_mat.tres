@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ba5hp0b5acvnx"]
+
+[ext_resource type="Texture2D" uid="uid://c550bdg5jojhp" path="res://graphics/textures/power box_Material_AlbedoTransparency.png" id="1_gol2c"]
+[ext_resource type="Texture2D" uid="uid://dqb01r5hxpsj2" path="res://graphics/textures/power box_Material_Normal.png" id="2_fa88q"]
+
+[resource]
+albedo_texture = ExtResource("1_gol2c")
+normal_enabled = true
+normal_texture = ExtResource("2_fa88q")

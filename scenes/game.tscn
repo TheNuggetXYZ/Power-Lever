@@ -10,6 +10,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
 reflected_light_source = 1
 tonemap_mode = 3
+glow_enabled = true
 
 [node name="Game" type="Node3D" unique_id=1013559315]
 script = ExtResource("1_uwrxv")
@@ -23,4 +24,4 @@ environment = SubResource("Environment_f4miv")
 [node name="Environment" parent="." unique_id=179936215 instance=ExtResource("2_lnu2h")]
 
 [node name="Player" parent="." unique_id=1096373769 instance=ExtResource("2_yqjtg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, -8.347015)
