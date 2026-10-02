@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://iyrskmwdp0tj"]
+
+[ext_resource type="Texture2D" uid="uid://bglt3i6k8e8ld" path="res://graphics/textures/flashlightColor.png" id="1_7blhx"]
+[ext_resource type="Texture2D" uid="uid://cwwwcfuwxq4ht" path="res://graphics/textures/flashlighemissive.png" id="2_i8kpr"]
+[ext_resource type="Texture2D" uid="uid://cjh5kr17ek7lh" path="res://graphics/textures/flashlightNormal.png" id="3_5g1fh"]
+
+[resource]
+albedo_texture = ExtResource("1_7blhx")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+emission_texture = ExtResource("2_i8kpr")
+normal_enabled = true
+normal_texture = ExtResource("3_5g1fh")
