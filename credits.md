@@ -9,3 +9,7 @@
 #### [PSX/CRT Retro Shader](https://godotshaders.com/shader/psx-crt-retro-shader-for-godot/)
 - by MattPin
 - licensed under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+#### [Flashlight 3D Model](https://sketchfab.com/3d-models/flashlight-12d6911e84154d2ab485d983361df76f)
+- by DJMaesen
+- licensed under [CC Atribution](https://creativecommons.org/licenses/by/4.0/)
