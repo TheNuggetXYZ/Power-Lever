@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://dhpxs4ibwchar"]
 
 [ext_resource type="PackedScene" uid="uid://bnry5yrp8ruwu" path="res://graphics/models/lamp.fbx" id="1_72t4t"]
+[ext_resource type="Script" uid="uid://bfjkbv140covm" path="res://scripts/world/Lamp.cs" id="2_5dawy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72t4t"]
 emission_enabled = true
 emission = Color(1, 1, 0.23529412, 1)
 emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dawy"]
+emission_enabled = true
+emission = Color(1, 0.60784316, 0, 1)
+emission_energy_multiplier = 0.42
 
 [sub_resource type="Animation" id="Animation_l7tty"]
 length = 0.001
@@ -45,7 +51,11 @@ _data = {
 &"idle": SubResource("Animation_5dawy")
 }
 
-[node name="lamp" unique_id=555993460 instance=ExtResource("1_72t4t")]
+[node name="lamp" unique_id=555993460 node_paths=PackedStringArray("_lights", "_bulbOn", "_bulbOff") instance=ExtResource("1_72t4t")]
+script = ExtResource("2_5dawy")
+_lights = [NodePath("SpotLight3D"), NodePath("OmniLight3D")]
+_bulbOn = NodePath("BulbOn")
+_bulbOff = NodePath("BulbOff")
 
 [node name="Line001_INSTALOD_INSTALOD" parent="." index="0" unique_id=1335820047]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, -3.0829017, 0)
@@ -56,21 +66,27 @@ transform = Transform3D(-2.2113981e-07, -4.537229e-08, -1.8550551, -3.29524e-15,
 [node name="Cylinder001_INSTALOD_INSTALOD" parent="." index="2" unique_id=383634237]
 transform = Transform3D(1.0387, 0, 0, 0, 0, 1.0387, 0, -1.0387, 0, 0, -0.13185263, 0)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." index="3" unique_id=1272659481]
+[node name="BulbOn" type="CSGSphere3D" parent="." index="3" unique_id=1272659481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1730103, 0)
 radius = 0.15
 material = SubResource("StandardMaterial3D_72t4t")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="4" unique_id=1377792465]
+[node name="BulbOff" type="CSGSphere3D" parent="." index="4" unique_id=90177359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1730103, 0)
+visible = false
+radius = 0.15
+material = SubResource("StandardMaterial3D_5dawy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="5" unique_id=1377792465]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.1730103, 0)
 light_energy = 3.0
 spot_range = 6.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="5" unique_id=471630228]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="6" unique_id=471630228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1730103, 0)
 light_energy = 0.3
 omni_range = 1.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6" unique_id=237742672]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7" unique_id=237742672]
 libraries/ = SubResource("AnimationLibrary_dsn84")
 autoplay = &"idle"
