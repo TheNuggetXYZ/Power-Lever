@@ -12,7 +12,7 @@ surface_material_override/0 = ExtResource("2_cn6pp")
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=787020570]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.19377308, 0)
 spot_range = 9.0
-spot_angle = 23.12
+spot_angle = 28.0
 
 [node name="FlashlightCone" parent="." index="2" unique_id=1201263915 instance=ExtResource("3_cn6pp")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.15844485, 0)
+transform = Transform3D(1.25, 0, 0, 0, -1, 1.8874475e-07, 0, -1.509958e-07, -1.25, 0, 0.15844485, 0)

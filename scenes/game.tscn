@@ -18,7 +18,7 @@ glow_enabled = true
 script = ExtResource("1_uwrxv")
 _lightTimer = NodePath("LightTimer")
 _lightCooldownRange = Vector2(3, 5)
-_initialLightCooldown = 10.0
+_initialLightCooldown = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1375818717]
 light_energy = 0.0
