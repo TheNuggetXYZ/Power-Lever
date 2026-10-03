@@ -11,6 +11,7 @@ public partial class Canvas : CanvasLayer
 	[Export] private Control _puzzleParent;
 	
 	private bool _lightsOn = true;
+	private bool _puzzleOpen = false;
 	
 	private Game _game;
 	
@@ -35,17 +36,21 @@ public partial class Canvas : CanvasLayer
 
 	private void TryShowPuzzle()
 	{
-		if (_lightsOn)
+		if (_lightsOn || _puzzleOpen)
 			return;
 
 		var puzzle = _puzzleScenes[GD.RandRange(0, _puzzleScenes.Length - 1)].Instantiate() as Puzzle;
 		puzzle.OnSolved += OnSolved;
+		puzzle.OnSolved += puzzle.QueueFree;
 		_puzzleParent.AddChild(puzzle);
 		_puzzleParent.Show();
+		_puzzleOpen = true;
 	}
 
 	private void OnSolved()
 	{
+		_puzzleParent.Hide();
+		_puzzleOpen = false;
 		_game.OnPuzzleSolved();
 	}
 }
