@@ -81,6 +81,7 @@ material = SubResource("StandardMaterial3D_5dawy")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.1730103, 0)
 light_energy = 3.0
 spot_range = 6.0
+spot_angle = 60.468746
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="6" unique_id=471630228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1730103, 0)
