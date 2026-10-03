@@ -25,9 +25,10 @@ backlight = Color(1, 1, 1, 1)
 material = SubResource("StandardMaterial3D_als2k")
 size = Vector2(0.05, 0.05)
 
-[node name="Environment" type="Node3D" unique_id=179936215 node_paths=PackedStringArray("_lamp")]
+[node name="Environment" type="Node3D" unique_id=179936215 node_paths=PackedStringArray("_lamp", "_powerBox")]
 script = ExtResource("1_als2k")
 _lamp = NodePath("lamp")
+_powerBox = NodePath("power_box")
 
 [node name="Room" type="CSGBox3D" parent="." unique_id=1984055278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7207642, 0)

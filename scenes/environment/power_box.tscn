@@ -7,8 +7,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_f4miv"]
 size = Vector3(3.7981262, 4.1129303, 0.68255615)
 
-[node name="power_box" unique_id=1553650439 instance=ExtResource("1_cdqdl")]
+[node name="power_box" unique_id=1553650439 node_paths=PackedStringArray("_interactArea") instance=ExtResource("1_cdqdl")]
 script = ExtResource("2_ksaim")
+_interactArea = NodePath("InteractArea")
 
 [node name="Cube_001" parent="." index="0" unique_id=555622691]
 transform = Transform3D(5.9604645e-06, 100, 2.9802322e-06, -2.9802322e-06, 0, 100, 100, -2.9802322e-06, 5.9604645e-06, -0.00043539703, -9.313226e-10, 0.14177915)
