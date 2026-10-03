@@ -10,7 +10,7 @@ public partial class Canvas : CanvasLayer
 	[Export] private PackedScene[] _puzzleScenes;
 	[Export] private Control _puzzleParent;
 	
-	private bool _lightsOn;
+	private bool _lightsOn = true;
 	
 	private Game _game;
 	
@@ -41,6 +41,7 @@ public partial class Canvas : CanvasLayer
 		var puzzle = _puzzleScenes[GD.RandRange(0, _puzzleScenes.Length - 1)].Instantiate() as Puzzle;
 		puzzle.OnSolved += OnSolved;
 		_puzzleParent.AddChild(puzzle);
+		_puzzleParent.Show();
 	}
 
 	private void OnSolved()
