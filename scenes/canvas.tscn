@@ -3,8 +3,21 @@
 [ext_resource type="Script" uid="uid://du6m7no6yl823" path="res://scripts/gui/Canvas.cs" id="1_7axt1"]
 [ext_resource type="Material" uid="uid://ocip24phahnv" path="res://graphics/materials/fullscreen_PSX_mat.tres" id="2_owpp6"]
 
-[node name="Canvas" type="CanvasLayer" unique_id=1484883035]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owpp6"]
+bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
+
+[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent")]
 script = ExtResource("1_7axt1")
+_puzzleParent = NodePath("PuzzlePanel")
+
+[node name="PuzzlePanel" type="Panel" parent="." unique_id=1755875297]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_owpp6")
 
 [node name="Shader" type="ColorRect" parent="." unique_id=1283762674]
 material = ExtResource("2_owpp6")

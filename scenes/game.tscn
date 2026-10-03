@@ -33,6 +33,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2
 script = ExtResource("4_lbhrr")
 _lookUpDownRange = Vector2(-60, 60)
 
-[node name="Canvas" parent="." unique_id=1484883035 instance=ExtResource("5_iywne")]
+[node name="Canvas" parent="." unique_id=1484883035 node_paths=PackedStringArray("_environment") instance=ExtResource("5_iywne")]
+_environment = NodePath("../Environment")
 
 [node name="LightTimer" type="Timer" parent="." unique_id=1735845393]
