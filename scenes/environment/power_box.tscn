@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://d2fjenjk12vyq"]
 
 [ext_resource type="PackedScene" uid="uid://37x3hy42fxyx" path="res://graphics/models/power_box.fbx" id="1_cdqdl"]
+[ext_resource type="Script" uid="uid://cn6xfu547vr42" path="res://scripts/world/PowerBox.cs" id="2_ksaim"]
 [ext_resource type="Material" uid="uid://ba5hp0b5acvnx" path="res://graphics/materials/power_box_mat.tres" id="2_v8vcw"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4miv"]
+size = Vector3(3.7981262, 4.1129303, 0.68255615)
+
 [node name="power_box" unique_id=1553650439 instance=ExtResource("1_cdqdl")]
+script = ExtResource("2_ksaim")
 
 [node name="Cube_001" parent="." index="0" unique_id=555622691]
 transform = Transform3D(5.9604645e-06, 100, 2.9802322e-06, -2.9802322e-06, 0, 100, 100, -2.9802322e-06, 5.9604645e-06, -0.00043539703, -9.313226e-10, 0.14177915)
@@ -50,3 +55,11 @@ transform = Transform3D(0.39385822, -0.003986369, 1.2128258e-08, -1.8341392e-10,
 
 [node name="Cylinder_008" parent="." index="11" unique_id=260616470]
 transform = Transform3D(1.2830826, -0.012986654, 2.477673e-09, 5.975125e-10, 0, 5.320762, -0.012986654, -1.2830826, 0, -0.73831946, -0.34078914, 0.31239563)
+
+[node name="InteractArea" type="Area3D" parent="." index="12" unique_id=1439947137]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0" unique_id=1531810671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24020386)
+shape = SubResource("BoxShape3D_f4miv")
