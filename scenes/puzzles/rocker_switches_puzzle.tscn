@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c50wmw53yj2bd"]
 
+[ext_resource type="Script" uid="uid://c7cyq3mylxjvj" path="res://scripts/gui/puzzles/RockerSwitchesPuzzle.cs" id="1_j1da3"]
 [ext_resource type="PackedScene" uid="uid://bi5x34awxtbaq" path="res://scenes/puzzles/rocker_switch.tscn" id="1_oonu2"]
 
-[node name="RockerSwitchesPuzzle" type="HBoxContainer" unique_id=158936742]
+[node name="RockerSwitchesPuzzle" type="HBoxContainer" unique_id=158936742 node_paths=PackedStringArray("_switches")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -15,6 +16,8 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 64
+script = ExtResource("1_j1da3")
+_switches = [NodePath("RockerSwitch"), NodePath("RockerSwitch2"), NodePath("RockerSwitch3"), NodePath("RockerSwitch4"), NodePath("RockerSwitch5"), NodePath("RockerSwitch6"), NodePath("RockerSwitch7")]
 
 [node name="RockerSwitch" parent="." unique_id=2100320871 instance=ExtResource("1_oonu2")]
 layout_mode = 2

@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://bi5x34awxtbaq"]
 
+[ext_resource type="Script" uid="uid://cara1vkvbgu7p" path="res://scripts/gui/puzzles/RockerSwitch.cs" id="1_3yejr"]
 [ext_resource type="Texture2D" uid="uid://d15svfd22aw06" path="res://graphics/textures/rocker_switch_off.png" id="1_a22kb"]
 [ext_resource type="Texture2D" uid="uid://djv8l8rrmwejy" path="res://graphics/textures/rocker_switch_on.png" id="2_3yejr"]
 
-[node name="RockerSwitch" type="Control" unique_id=2100320871]
+[node name="RockerSwitch" type="Control" unique_id=2100320871 node_paths=PackedStringArray("_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3yejr")
+_button = NodePath("TextureButton")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1607232174]
 layout_mode = 1
