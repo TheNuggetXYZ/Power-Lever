@@ -13,9 +13,14 @@ public partial class TurnValve : Control
 		_targetSector.EndAngleDeg = endAngle;
 	}
 
+	public void SetAngleDegrees(float angle)
+	{
+		_valve.SetAngleDegrees(angle);
+	}
+
 	public bool IsSolved()
 	{
-		return _targetSector.StartAngleDeg < _valve.RotationDegrees &&
-		       _valve.RotationDegrees < _targetSector.EndAngleDeg;
+		return _targetSector.StartAngleDeg < _valve.GetAngleDegrees() &&
+		       _valve.GetAngleDegrees() < _targetSector.EndAngleDeg;
 	}
 }

@@ -7,6 +7,16 @@ public partial class Valve : Control
 	[Export] private TextureRect _texture;
 	private bool _isDragging;
 	private float _previousAngle = 0.0f;
+
+	public void SetAngleDegrees(float angle)
+	{
+		_texture.RotationDegrees = angle;
+	}
+
+	public float GetAngleDegrees()
+	{
+		return ((_texture.RotationDegrees % 360f) + 360) % 360f;
+	}
 	
 	public override void _GuiInput(InputEvent @event)
 	{

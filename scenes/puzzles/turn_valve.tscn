@@ -4,16 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://db023jbdjadyd" path="res://scenes/puzzles/valve.tscn" id="1_wrfl2"]
 [ext_resource type="Script" uid="uid://chayw4wrrjai5" path="res://scripts/gui/RingSector.cs" id="2_qeqc5"]
 
-[node name="TurnValve" type="Control" unique_id=1278061170]
+[node name="TurnValve" type="Control" unique_id=1278061170 node_paths=PackedStringArray("_valve", "_targetSector")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -85.0
+offset_right = 85.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_qeqc5")
+_valve = NodePath("Valve")
+_targetSector = NodePath("TargetRing")
 
 [node name="TargetRing" type="Control" parent="." unique_id=69155848]
 layout_mode = 1

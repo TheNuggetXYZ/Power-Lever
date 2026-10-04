@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://du6m7no6yl823" path="res://scripts/gui/Canvas.cs" id="1_7axt1"]
 [ext_resource type="Material" uid="uid://ocip24phahnv" path="res://graphics/materials/fullscreen_PSX_mat.tres" id="2_owpp6"]
 [ext_resource type="PackedScene" uid="uid://c50wmw53yj2bd" path="res://scenes/puzzles/rocker_switches_puzzle.tscn" id="2_sxins"]
+[ext_resource type="PackedScene" uid="uid://c7cd7354178m7" path="res://scenes/puzzles/turn_valve_puzzle.tscn" id="3_o314q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owpp6"]
 bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
 
 [node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_submitButton")]
 script = ExtResource("1_7axt1")
-_puzzleScenes = Array[PackedScene]([ExtResource("2_sxins")])
+_puzzleScenes = Array[PackedScene]([ExtResource("2_sxins"), ExtResource("3_o314q")])
 _puzzleParent = NodePath("PuzzlePanel/PuzzleParent")
 _puzzlePanel = NodePath("PuzzlePanel")
 _submitButton = NodePath("PuzzlePanel/Button")
