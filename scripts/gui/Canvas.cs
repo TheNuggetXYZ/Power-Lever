@@ -9,6 +9,7 @@ public partial class Canvas : CanvasLayer
 	[Export] private world.Environment _environment;
 	[Export] private PackedScene[] _puzzleScenes;
 	[Export] private Control _puzzleParent;
+	[Export] private Control _puzzlePanel;
 	[Export] private BaseButton _submitButton;
 	
 	private bool _lightsOn = true;
@@ -44,7 +45,7 @@ public partial class Canvas : CanvasLayer
 
 		_puzzle = _puzzleScenes[GD.RandRange(0, _puzzleScenes.Length - 1)].Instantiate() as Puzzle;
 		_puzzleParent.AddChild(_puzzle);
-		_puzzleParent.Show();
+		_puzzlePanel.Show();
 		_puzzleOpen = true;
 	}
 
@@ -58,7 +59,7 @@ public partial class Canvas : CanvasLayer
 
 	private void OnPuzzleSolved()
 	{
-		_puzzleParent.Hide();
+		_puzzlePanel.Hide();
 		_puzzleOpen = false;
 		_puzzle.QueueFree();
 		_puzzle = null;

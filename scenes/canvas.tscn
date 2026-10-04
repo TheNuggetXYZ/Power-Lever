@@ -7,10 +7,11 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owpp6"]
 bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
 
-[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_submitButton")]
+[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_submitButton")]
 script = ExtResource("1_7axt1")
 _puzzleScenes = Array[PackedScene]([ExtResource("2_sxins")])
-_puzzleParent = NodePath("PuzzlePanel")
+_puzzleParent = NodePath("PuzzlePanel/PuzzleParent")
+_puzzlePanel = NodePath("PuzzlePanel")
 _submitButton = NodePath("PuzzlePanel/Button")
 
 [node name="PuzzlePanel" type="Panel" parent="." unique_id=1755875297]
@@ -35,6 +36,13 @@ offset_bottom = 4.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Submit"
+
+[node name="PuzzleParent" type="Control" parent="PuzzlePanel" unique_id=1211315985]
+layout_mode = 1
+anchor_right = 0.75
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Shader" type="ColorRect" parent="." unique_id=1283762674]
 material = ExtResource("2_owpp6")
