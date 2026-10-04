@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://db023jbdjadyd"]
 
 [ext_resource type="Script" uid="uid://cbc8ntjdqsr1n" path="res://scripts/gui/puzzles/Valve.cs" id="1_dgl5l"]
-[ext_resource type="Texture2D" uid="uid://cfjgcuo7picy3" path="res://graphics/textures/Valve.png" id="1_e75pn"]
+[ext_resource type="Texture2D" uid="uid://ddn2kcmh112rj" path="res://graphics/textures/ValveWithArrow.png" id="2_dgl5l"]
 
 [node name="Valve" type="Control" unique_id=1486260104 node_paths=PackedStringArray("_texture")]
 layout_mode = 3
@@ -29,4 +29,4 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("1_e75pn")
+texture = ExtResource("2_dgl5l")
