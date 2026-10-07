@@ -4,16 +4,17 @@
 [ext_resource type="Material" uid="uid://ocip24phahnv" path="res://graphics/materials/fullscreen_PSX_mat.tres" id="2_owpp6"]
 [ext_resource type="PackedScene" uid="uid://c50wmw53yj2bd" path="res://scenes/puzzles/rocker_switches_puzzle.tscn" id="2_sxins"]
 [ext_resource type="PackedScene" uid="uid://c7cd7354178m7" path="res://scenes/puzzles/turn_valve_puzzle.tscn" id="3_o314q"]
+[ext_resource type="PackedScene" uid="uid://b77vx7jd5kq3f" path="res://scenes/puzzles/submit_lever.tscn" id="4_bvnf8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owpp6"]
 bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
 
-[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_submitButton")]
+[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_submitLever")]
 script = ExtResource("1_7axt1")
 _puzzleScenes = Array[PackedScene]([ExtResource("2_sxins"), ExtResource("3_o314q")])
 _puzzleParent = NodePath("PuzzlePanel/PuzzleParent")
 _puzzlePanel = NodePath("PuzzlePanel")
-_submitButton = NodePath("PuzzlePanel/Button")
+_submitLever = NodePath("PuzzlePanel/SubmitLever")
 
 [node name="PuzzlePanel" type="Panel" parent="." unique_id=1755875297]
 visible = false
@@ -24,19 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_owpp6")
 
-[node name="Button" type="Button" parent="PuzzlePanel" unique_id=1082362040]
+[node name="SubmitLever" parent="PuzzlePanel" unique_id=1189514925 instance=ExtResource("4_bvnf8")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.946
-anchor_top = 0.5
-anchor_right = 0.946
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -4.0
-offset_bottom = 4.0
+anchor_left = 0.85
+anchor_right = 0.85
 grow_horizontal = 0
-grow_vertical = 2
-text = "Submit"
 
 [node name="PuzzleParent" type="Control" parent="PuzzlePanel" unique_id=1211315985]
 layout_mode = 1

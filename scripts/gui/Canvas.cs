@@ -10,7 +10,7 @@ public partial class Canvas : CanvasLayer
 	[Export] private PackedScene[] _puzzleScenes;
 	[Export] private Control _puzzleParent;
 	[Export] private Control _puzzlePanel;
-	[Export] private BaseButton _submitButton;
+	[Export] private SubmitLever _submitLever;
 	
 	private bool _lightsOn = true;
 	private bool _puzzleOpen = false;
@@ -25,7 +25,7 @@ public partial class Canvas : CanvasLayer
 		_game.OnLightsOff += OnLightsOff;
 		
 		_environment.OnPowerBoxInteract += TryShowPuzzle;
-		_submitButton.Pressed += SubmitButtonOnPressed;
+		_submitLever.OnPressed += SubmitLeverOnPressed;
 	}
 
 	private void OnLightsOff()
@@ -49,7 +49,7 @@ public partial class Canvas : CanvasLayer
 		_puzzleOpen = true;
 	}
 
-	private void SubmitButtonOnPressed()
+	private void SubmitLeverOnPressed()
 	{
 		if (!_puzzle.IsSolved())
 			return;
