@@ -51,10 +51,8 @@ public partial class Canvas : CanvasLayer
 
 	private void SubmitLeverOnPressed()
 	{
-		if (!_puzzle.IsSolved())
-			return;
-		
-		OnPuzzleSolved();
+		if (_puzzle != null && _puzzle.IsSolved())
+			OnPuzzleSolved();
 	}
 
 	private void OnPuzzleSolved()
