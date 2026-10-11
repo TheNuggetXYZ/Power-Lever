@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://4g8dp47k2oal"]
+
+[ext_resource type="PackedScene" uid="uid://beepkfxy6f06c" path="res://graphics/models/pipes.fbx" id="1_4m10m"]
+[ext_resource type="Texture2D" uid="uid://bwoaajgevl72p" path="res://graphics/textures/pipesColor.png" id="2_1jlpb"]
+[ext_resource type="Texture2D" uid="uid://coocpadtbfjcj" path="res://graphics/textures/pipesMetallic.png" id="3_3an8r"]
+[ext_resource type="Texture2D" uid="uid://bldol6gvpcr1v" path="res://graphics/textures/pipesNormal.png" id="4_yb4ob"]
+[ext_resource type="Texture2D" uid="uid://doq4iiey7itpp" path="res://graphics/textures/pipesRoughness.png" id="5_gwyck"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60nec"]
+albedo_texture = ExtResource("2_1jlpb")
+metallic = 1.0
+metallic_texture = ExtResource("3_3an8r")
+roughness_texture = ExtResource("5_gwyck")
+normal_enabled = true
+normal_texture = ExtResource("4_yb4ob")
+
+[node name="pipes" unique_id=214448220 instance=ExtResource("1_4m10m")]
+
+[node name="pipeCurved" parent="." index="0" unique_id=583050692]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeCurved_1" parent="." index="1" unique_id=360714427]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeCurved_2" parent="." index="2" unique_id=1142315420]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeStraight" parent="." index="3" unique_id=48105646]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeStraight_1" parent="." index="4" unique_id=1872436361]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeStraight_2" parent="." index="5" unique_id=1750929364]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeU" parent="." index="6" unique_id=1716970595]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipeU_1" parent="." index="7" unique_id=1698962644]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipebent1" parent="." index="8" unique_id=1058774597]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipebent1_1" parent="." index="9" unique_id=120396546]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipebent1_2" parent="." index="10" unique_id=992992463]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipebent2" parent="." index="11" unique_id=2044472145]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="pipebent2_1" parent="." index="12" unique_id=1894136706]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment" parent="." index="13" unique_id=363090399]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segmentT" parent="." index="14" unique_id=804864026]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="handlebase_2" parent="segmentT" index="0" unique_id=2118511856]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="handle_2" parent="segmentT/handlebase_2" index="0" unique_id=653263007]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segmentT_1" parent="." index="15" unique_id=510520202]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segmentT_2" parent="." index="16" unique_id=1777613390]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segmentT_3" parent="." index="17" unique_id=1745733050]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="handlebase" parent="segmentT_3" index="0" unique_id=1836434113]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="handle" parent="segmentT_3/handlebase" index="0" unique_id=109761985]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_1" parent="." index="18" unique_id=1141209855]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_10" parent="." index="19" unique_id=179185329]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_11" parent="." index="20" unique_id=1934304236]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_12" parent="." index="21" unique_id=1700539915]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_2" parent="." index="22" unique_id=1536044739]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_3" parent="." index="23" unique_id=2122028600]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_4" parent="." index="24" unique_id=1127475498]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_5" parent="." index="25" unique_id=607990141]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_6" parent="." index="26" unique_id=1800856508]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_7" parent="." index="27" unique_id=1974556378]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_8" parent="." index="28" unique_id=888889546]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")
+
+[node name="segment_9" parent="." index="29" unique_id=774416005]
+surface_material_override/0 = SubResource("StandardMaterial3D_60nec")

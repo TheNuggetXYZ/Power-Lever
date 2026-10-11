@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c3b1pbgwcu7pr"]
+
+[node name="Room" type="Node3D" unique_id=2027609736]
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=1580940063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01574707, -0.014160156, -10.143465)
+size = Vector3(19.99292, 7.458008, 0.30163574)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="." unique_id=2141283861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01574707, -3.9847236, -6.653446)
+size = Vector3(19.99292, 0.5550537, 6.6905365)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=98482488]
+flip_faces = true
+size = Vector3(20, 7.4415283, 20)
