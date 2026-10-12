@@ -13,3 +13,7 @@
 #### [Flashlight 3D Model](https://sketchfab.com/3d-models/flashlight-12d6911e84154d2ab485d983361df76f)
 - by DJMaesen
 - licensed under [CC Atribution](https://creativecommons.org/licenses/by/4.0/)
+
+#### [Modular Pipes 3D Model](https://sketchfab.com/3d-models/modular-pipes-f43677d2d1014669b7c7a9f220d46eb3)
+- by DJMaesen
+- licensed under [CC Atribution](https://creativecommons.org/licenses/by/4.0/)
