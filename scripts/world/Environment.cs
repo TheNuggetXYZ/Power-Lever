@@ -7,7 +7,9 @@ public partial class Environment : Node3D
 {
 	[Export] private Lamp _lamp;
 	[Export] private PowerBox _powerBox;
+	[Export] private Marker3D[] _enemyPositions;
 
+	public Marker3D[] EnemyPositions => _enemyPositions;
 	public Action OnPowerBoxInteract;
 	
 	public override void _Ready()

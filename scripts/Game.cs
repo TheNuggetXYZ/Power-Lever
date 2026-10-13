@@ -11,6 +11,7 @@ public partial class Game : Node3D
 	
 	public Action OnLightsOn;
 	public Action OnLightsOff;
+	public bool IsLightOn;
 
 	public override void _Ready()
 	{
@@ -25,12 +26,14 @@ public partial class Game : Node3D
 
 	private void LightTimerOnTimeout()
 	{
+		IsLightOn = false;
 		OnLightsOff?.Invoke();
 	}
 
 	public void OnPuzzleSolved()
 	{
 		_lightTimer.Start(GD.RandRange(_lightCooldownRange.X, _lightCooldownRange.Y));
+		IsLightOn = true;
 		OnLightsOn?.Invoke();
 	}
 }

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cfbc2opewkqwc"]
+
+[ext_resource type="Texture2D" uid="uid://8noosmjdkrf3" path="res://graphics/textures/monster.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://8bhlc3bx8nvh" path="res://scripts/Enemy.cs" id="1_md0e3"]
+
+[node name="Enemy" type="Node3D" unique_id=448320556]
+script = ExtResource("1_md0e3")
+_moveCooldown = 3.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1929421360]
+pixel_size = 0.03
+billboard = 1
+texture = ExtResource("1_7p1mj")

@@ -28,27 +28,33 @@ backlight = Color(1, 1, 1, 1)
 material = SubResource("StandardMaterial3D_als2k")
 size = Vector2(0.05, 0.05)
 
-[node name="Environment" type="Node3D" unique_id=179936215 node_paths=PackedStringArray("_lamp", "_powerBox")]
+[node name="Environment" type="Node3D" unique_id=179936215 node_paths=PackedStringArray("_lamp", "_powerBox", "_enemyPositions")]
 script = ExtResource("1_als2k")
-_lamp = NodePath("lamp")
-_powerBox = NodePath("power_box")
+_lamp = NodePath("Room/lamp")
+_powerBox = NodePath("Room/power_box")
+_enemyPositions = [NodePath("EnemyPositions/PositionMarker1"), NodePath("EnemyPositions/PositionMarker2"), NodePath("EnemyPositions/PositionMarker3"), NodePath("EnemyPositions/PositionMarker4"), NodePath("EnemyPositions/PositionMarker5"), NodePath("EnemyPositions/PositionMarker6"), NodePath("EnemyPositions/PositionMarker7"), NodePath("EnemyPositions/PositionMarker8"), NodePath("EnemyPositions/PositionMarker9"), NodePath("EnemyPositions/PositionMarker10"), NodePath("EnemyPositions/PositionMarker11"), NodePath("EnemyPositions/PositionMarker12"), NodePath("EnemyPositions/PositionMarker13")]
 
-[node name="Table" type="CSGBox3D" parent="." unique_id=1677063932]
+[node name="Room" type="Node" parent="." unique_id=262085206]
+
+[node name="Wall" type="CSGBox3D" parent="Room" unique_id=732257689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5879822, -10.443176)
+size = Vector3(1.3271484, 8.175964, 0.864624)
+
+[node name="ContainerBox" type="CSGBox3D" parent="Room" unique_id=1164947015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7104936, -7.4182396)
+flip_faces = true
+size = Vector3(41.07715, 7.4427185, 42.063477)
+
+[node name="Table" type="CSGBox3D" parent="Room" unique_id=1677063932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49, -7)
 size = Vector3(3, 1, 1)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Table" unique_id=1002486288]
+[node name="CSGBox3D" type="CSGBox3D" parent="Room/Table" unique_id=1002486288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099999994, 0)
 operation = 2
 size = Vector3(2.7, 0.9, 1)
 
-[node name="power_box" parent="." unique_id=1553650439 instance=ExtResource("2_fm4en")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.75, -10)
-
-[node name="lamp" parent="." unique_id=555993460 instance=ExtResource("1_bc5iu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4380803, -8)
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=103959913]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Room" unique_id=103959913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5269995, -6.657524)
 amount = 64
 lifetime = 16.0
@@ -58,23 +64,63 @@ transform_align_channel_filter = 1
 process_material = SubResource("ParticleProcessMaterial_f4miv")
 draw_pass_1 = SubResource("QuadMesh_eui3l")
 
-[node name="Pipes1" parent="." unique_id=51149663 instance=ExtResource("4_58tnn")]
+[node name="power_box" parent="Room" unique_id=1553650439 instance=ExtResource("2_fm4en")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.75, -10)
 
-[node name="Pipes2" parent="." unique_id=2114848246 instance=ExtResource("5_6uwxm")]
+[node name="lamp" parent="Room" unique_id=555993460 instance=ExtResource("1_bc5iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.4380803, -8)
 
-[node name="Wall" type="CSGBox3D" parent="." unique_id=732257689]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5879822, -10.443176)
-size = Vector3(1.3271484, 8.175964, 0.864624)
+[node name="Pipes" type="Node" parent="Room" unique_id=1254581918]
 
-[node name="ContainerBox" type="CSGBox3D" parent="." unique_id=1164947015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7104936, -7.4182396)
-flip_faces = true
-size = Vector3(41.07715, 7.4427185, 42.063477)
+[node name="Pipes1" parent="Room/Pipes" unique_id=51149663 instance=ExtResource("4_58tnn")]
 
-[node name="Pipes3" parent="." unique_id=342906889 instance=ExtResource("6_6uwxm")]
+[node name="Pipes2" parent="Room/Pipes" unique_id=2114848246 instance=ExtResource("5_6uwxm")]
 
-[node name="Pipes4" parent="." unique_id=1458218339 instance=ExtResource("6_6uwxm")]
+[node name="Pipes3" parent="Room/Pipes" unique_id=342906889 instance=ExtResource("6_6uwxm")]
+
+[node name="Pipes4" parent="Room/Pipes" unique_id=1458218339 instance=ExtResource("6_6uwxm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8, 0, -7)
 
-[node name="Pipes5" parent="." unique_id=749288938 instance=ExtResource("6_6uwxm")]
+[node name="Pipes5" parent="Room/Pipes" unique_id=749288938 instance=ExtResource("6_6uwxm")]
 transform = Transform3D(0.7071068, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.7071068, 10, 0, -1)
+
+[node name="EnemyPositions" type="Node" parent="." unique_id=704276083]
+
+[node name="PositionMarker1" type="Marker3D" parent="EnemyPositions" unique_id=2071566726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.494879, 1.6760683, 9.700157)
+
+[node name="PositionMarker2" type="Marker3D" parent="EnemyPositions" unique_id=157902532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.021899, 1.6760683, -12.033577)
+
+[node name="PositionMarker3" type="Marker3D" parent="EnemyPositions" unique_id=386942956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.326119, 1.6760683, -13.96777)
+
+[node name="PositionMarker4" type="Marker3D" parent="EnemyPositions" unique_id=1485631095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14425397, 1.6760683, 4.5170817)
+
+[node name="PositionMarker5" type="Marker3D" parent="EnemyPositions" unique_id=920323888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.726102, 1.6760683, -16.943611)
+
+[node name="PositionMarker6" type="Marker3D" parent="EnemyPositions" unique_id=1149900949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.579214, 1.6760683, -1.0975056)
+
+[node name="PositionMarker7" type="Marker3D" parent="EnemyPositions" unique_id=1361737698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8040695, 1.6760702, -7.9379277)
+
+[node name="PositionMarker8" type="Marker3D" parent="EnemyPositions" unique_id=103322441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.621332, 1.6760702, -7.344313)
+
+[node name="PositionMarker9" type="Marker3D" parent="EnemyPositions" unique_id=1198693713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37916, 1.6760702, -13.4207945)
+
+[node name="PositionMarker10" type="Marker3D" parent="EnemyPositions" unique_id=1714340434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20496297, 1.6760702, -1.9250889)
+
+[node name="PositionMarker11" type="Marker3D" parent="EnemyPositions" unique_id=1646625129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20496297, 1.7701097, -3.1200604)
+
+[node name="PositionMarker12" type="Marker3D" parent="EnemyPositions" unique_id=547307819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20496297, 2.0580683, -4.7489853)
+
+[node name="PositionMarker13" type="Marker3D" parent="EnemyPositions" unique_id=1049253472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20496297, 2.5987883, -5.6776266)

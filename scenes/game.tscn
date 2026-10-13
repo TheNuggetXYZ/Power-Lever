@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b63caxqa84a2r" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://b2ej0sj4nhny1" path="res://scripts/Player.cs" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cdw804tt60b5l" path="res://scenes/canvas.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cfbc2opewkqwc" path="res://scenes/enemy.tscn" id="6_p57ef"]
 
 [sub_resource type="Environment" id="Environment_f4miv"]
 ambient_light_source = 3
@@ -37,3 +38,7 @@ _lookUpDownRange = Vector2(-60, 60)
 _environment = NodePath("../Environment")
 
 [node name="LightTimer" type="Timer" parent="." unique_id=1735845393]
+
+[node name="Enemy" parent="." unique_id=448320556 node_paths=PackedStringArray("_environment") instance=ExtResource("6_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.801712, 3.1276855, -3.775959)
+_environment = NodePath("../Environment")
