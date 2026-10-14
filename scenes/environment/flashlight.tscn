@@ -7,7 +7,7 @@
 
 [node name="flashlight" unique_id=907678344 node_paths=PackedStringArray("_lights", "_volumetricLight") instance=ExtResource("1_bovok")]
 script = ExtResource("2_3unuc")
-_lights = [NodePath("SpotLight3D")]
+_lights = [NodePath("SpotLight3D"), NodePath("SpotLight3DEnemyOnly")]
 _volumetricLight = NodePath("FlashlightCone")
 
 [node name="flashlight" parent="." index="0" unique_id=328425646]
@@ -15,8 +15,17 @@ surface_material_override/0 = ExtResource("2_cn6pp")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=787020570]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.19377308, 0)
+light_cull_mask = 4294967293
 spot_range = 9.0
 spot_angle = 28.0
 
 [node name="FlashlightCone" parent="." index="2" unique_id=1201263915 instance=ExtResource("3_cn6pp")]
 transform = Transform3D(1.25, 0, 0, 0, -1, 1.8874475e-07, 0, -1.509958e-07, -1.25, 0, 0.15844485, 0)
+
+[node name="SpotLight3DEnemyOnly" type="SpotLight3D" parent="." index="3" unique_id=831299170]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.19377308, 0)
+light_energy = 1.859
+light_cull_mask = 4294967294
+spot_range = 16.553434
+spot_attenuation = 0.0
+spot_angle = 28.0
