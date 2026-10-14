@@ -5,15 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://c50wmw53yj2bd" path="res://scenes/puzzles/rocker_switches_puzzle.tscn" id="2_sxins"]
 [ext_resource type="PackedScene" uid="uid://c7cd7354178m7" path="res://scenes/puzzles/turn_valve_puzzle.tscn" id="3_o314q"]
 [ext_resource type="PackedScene" uid="uid://b77vx7jd5kq3f" path="res://scenes/puzzles/submit_lever.tscn" id="4_bvnf8"]
+[ext_resource type="Texture2D" uid="uid://d15svfd22aw06" path="res://graphics/textures/rocker_switch_off.png" id="5_g1y03"]
+[ext_resource type="Texture2D" uid="uid://djv8l8rrmwejy" path="res://graphics/textures/rocker_switch_on.png" id="6_b5t36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owpp6"]
 bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
 
-[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_submitLever")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4miv"]
+bg_color = Color(0.1254902, 0.11764706, 0.13725491, 1)
+
+[node name="Canvas" type="CanvasLayer" unique_id=1484883035 node_paths=PackedStringArray("_puzzleParent", "_puzzlePanel", "_flashlightPanel", "_flashlightButton", "_submitLever")]
 script = ExtResource("1_7axt1")
 _puzzleScenes = Array[PackedScene]([ExtResource("2_sxins"), ExtResource("3_o314q")])
 _puzzleParent = NodePath("PuzzlePanel/PuzzleParent")
 _puzzlePanel = NodePath("PuzzlePanel")
+_flashlightPanel = NodePath("FlashlightPanel")
+_flashlightButton = NodePath("FlashlightPanel/FlashlightButton")
 _submitLever = NodePath("PuzzlePanel/SubmitLever")
 
 [node name="PuzzlePanel" type="Panel" parent="." unique_id=1755875297]
@@ -38,6 +45,31 @@ anchor_right = 0.75
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FlashlightPanel" type="Panel" parent="." unique_id=922627345]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 90.0
+offset_bottom = 60.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f4miv")
+
+[node name="FlashlightButton" type="TextureButton" parent="FlashlightPanel" unique_id=1232248474]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_vertical = 2
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("5_g1y03")
+texture_pressed = ExtResource("6_b5t36")
+stretch_mode = 5
 
 [node name="Shader" type="ColorRect" parent="." unique_id=1283762674]
 material = ExtResource("2_owpp6")

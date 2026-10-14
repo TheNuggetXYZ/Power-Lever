@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b7udvhoo402v1" path="res://scripts/Game.cs" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b3tef5w6psvxk" path="res://scenes/environment/environment.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://b63caxqa84a2r" path="res://scenes/player.tscn" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://b2ej0sj4nhny1" path="res://scripts/Player.cs" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cdw804tt60b5l" path="res://scenes/canvas.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cfbc2opewkqwc" path="res://scenes/enemy.tscn" id="6_p57ef"]
 
@@ -29,10 +28,9 @@ environment = SubResource("Environment_f4miv")
 
 [node name="Environment" parent="." unique_id=179936215 instance=ExtResource("2_lnu2h")]
 
-[node name="Player" parent="." unique_id=1096373769 instance=ExtResource("2_yqjtg")]
+[node name="Player" parent="." unique_id=1096373769 node_paths=PackedStringArray("_canvas") instance=ExtResource("2_yqjtg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, -8.347015)
-script = ExtResource("4_lbhrr")
-_lookUpDownRange = Vector2(-60, 60)
+_canvas = NodePath("../Canvas")
 
 [node name="Canvas" parent="." unique_id=1484883035 node_paths=PackedStringArray("_environment") instance=ExtResource("5_iywne")]
 _environment = NodePath("../Environment")

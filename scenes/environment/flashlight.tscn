@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cee1qq4vjvdbc"]
 
 [ext_resource type="PackedScene" uid="uid://dl0btasjjimqi" path="res://graphics/models/flashlight.fbx" id="1_bovok"]
+[ext_resource type="Script" uid="uid://d1ppg5turqt6k" path="res://scripts/Flashlight.cs" id="2_3unuc"]
 [ext_resource type="Material" uid="uid://iyrskmwdp0tj" path="res://graphics/materials/flashlight_mat.tres" id="2_cn6pp"]
 [ext_resource type="PackedScene" uid="uid://dl6koj8awiy1j" path="res://scenes/environment/flashlight_cone.tscn" id="3_cn6pp"]
 
-[node name="flashlight" unique_id=907678344 instance=ExtResource("1_bovok")]
+[node name="flashlight" unique_id=907678344 node_paths=PackedStringArray("_lights", "_volumetricLight") instance=ExtResource("1_bovok")]
+script = ExtResource("2_3unuc")
+_lights = [NodePath("SpotLight3D")]
+_volumetricLight = NodePath("FlashlightCone")
 
 [node name="flashlight" parent="." index="0" unique_id=328425646]
 surface_material_override/0 = ExtResource("2_cn6pp")

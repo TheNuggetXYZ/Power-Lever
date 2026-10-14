@@ -10,11 +10,15 @@ public partial class Canvas : CanvasLayer
 	[Export] private PackedScene[] _puzzleScenes;
 	[Export] private Control _puzzleParent;
 	[Export] private Control _puzzlePanel;
+	[Export] private Control _flashlightPanel;
+	[Export] private BaseButton _flashlightButton;
 	[Export] private SubmitLever _submitLever;
 	
 	private bool _lightsOn = true;
 	private bool _puzzleOpen = false;
 	private Puzzle _puzzle;
+
+	public Action<bool> OnFlashlightToggle;
 	
 	private Game _game;
 	
@@ -26,6 +30,9 @@ public partial class Canvas : CanvasLayer
 		
 		_environment.OnPowerBoxInteract += TryShowPuzzle;
 		_submitLever.OnPressed += SubmitLeverOnPressed;
+		_flashlightButton.Toggled += FlashlightButtonOnToggled;
+		
+		FlashlightButtonOnToggled(_flashlightButton.ButtonPressed);
 	}
 
 	private void OnLightsOff()
@@ -46,6 +53,7 @@ public partial class Canvas : CanvasLayer
 		_puzzle = _puzzleScenes[GD.RandRange(0, _puzzleScenes.Length - 1)].Instantiate() as Puzzle;
 		_puzzleParent.AddChild(_puzzle);
 		_puzzlePanel.Show();
+		_flashlightPanel.Hide();
 		_puzzleOpen = true;
 	}
 
@@ -55,9 +63,15 @@ public partial class Canvas : CanvasLayer
 			OnPuzzleSolved();
 	}
 
+	private void FlashlightButtonOnToggled(bool on)
+	{
+		OnFlashlightToggle?.Invoke(on);
+	}
+
 	private void OnPuzzleSolved()
 	{
 		_puzzlePanel.Hide();
+		_flashlightPanel.Show();
 		_puzzleOpen = false;
 		_puzzle.QueueFree();
 		_puzzle = null;
