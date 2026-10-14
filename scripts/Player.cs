@@ -12,8 +12,6 @@ public partial class Player : Camera3D
 
 	public override void _Ready()
 	{
-		Input.EmulateTouchFromMouse = true;
-		
 		_canvas.OnFlashlightToggle += _flashlight.Toggle;
 	}
 
@@ -21,13 +19,24 @@ public partial class Player : Camera3D
 	{
 		if (@event is InputEventScreenDrag screenDrag)
 		{
-			RotateY(-screenDrag.Relative.X * _sensitivity);
-
-			Vector3 rot = Rotation;
-			rot.X -= screenDrag.Relative.Y * _sensitivity;
-			rot.X = Mathf.Clamp(rot.X, Mathf.DegToRad(_lookUpDownRange.X), Mathf.DegToRad(_lookUpDownRange.Y));
-            
-			Rotation = rot;
+			HandleRotation(screenDrag.Relative);
 		}
+
+		if (@event is InputEventMouseMotion mouseMotion)
+		{
+			HandleRotation(mouseMotion.Relative);
+		}
+			
+	}
+
+	private void HandleRotation(Vector2 relative)
+	{
+		RotateY(-relative.X * _sensitivity);
+
+		Vector3 rot = Rotation;
+		rot.X -= relative.Y * _sensitivity;
+		rot.X = Mathf.Clamp(rot.X, Mathf.DegToRad(_lookUpDownRange.X), Mathf.DegToRad(_lookUpDownRange.Y));
+            
+		Rotation = rot;
 	}
 }

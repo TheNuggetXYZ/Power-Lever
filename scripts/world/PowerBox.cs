@@ -16,11 +16,14 @@ public partial class PowerBox : Node3D
 
 	private void InteractAreaOnInputEvent(Node camera, InputEvent @event, Vector3 eventPosition, Vector3 normal, long shapeIdx)
 	{
-		if (@event is InputEventMouseButton mouseButton && mouseButton.Pressed && mouseButton.ButtonIndex == MouseButton.Left)
-		{
-			TriggerTap();
-		}
-		else if (@event is InputEventScreenTouch screenTouch && screenTouch.Pressed)
+		// Mouse input doesn't get fired when mouse mode is set to captured
+		// TODO: Implement this with a raycast
+		// if (@event is InputEventMouseButton mouseButton && mouseButton.Pressed && mouseButton.ButtonIndex == MouseButton.Left)
+		// {
+		// 	TriggerTap();
+		// }
+		
+		if (@event is InputEventScreenTouch screenTouch && screenTouch.Pressed)
 		{
 			TriggerTap();
 		}

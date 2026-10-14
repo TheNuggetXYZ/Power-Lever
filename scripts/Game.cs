@@ -17,6 +17,9 @@ public partial class Game : Node3D
 	{
 		_lightTimer.Timeout += LightTimerOnTimeout;
 		_lightTimer.Start(_initialLightCooldown);
+
+		if (!DisplayServer.IsTouchscreenAvailable())
+			Input.SetMouseMode(Input.MouseModeEnum.Captured);
 	}
 
 	public override void _Process(double delta)
