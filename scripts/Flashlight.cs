@@ -7,6 +7,7 @@ public partial class Flashlight : Node3D
 {
 	[Export] private Light3D[] _lights;
 	[Export] private Node3D _volumetricLight;
+	public bool IsOn { get; private set; }
 
 	public void Toggle(bool on)
 	{
@@ -14,5 +15,7 @@ public partial class Flashlight : Node3D
 			light.Visible = on;
 		
 		_volumetricLight.Visible = on;
+
+		IsOn = on;
 	}
 }

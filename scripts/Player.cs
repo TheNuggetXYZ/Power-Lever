@@ -22,6 +22,8 @@ public partial class Player : Camera3D
 	{
 		if (Input.IsActionJustPressed("interact"))
 			InteractRayCastCheck();
+		if (Input.IsActionJustPressed("flashlight"))
+			_flashlight.Toggle(!_flashlight.IsOn);
 	}
 
 	private void InteractRayCastCheck()
