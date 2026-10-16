@@ -3,9 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://cee1qq4vjvdbc" path="res://scenes/environment/flashlight.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b2ej0sj4nhny1" path="res://scripts/Player.cs" id="1_g2els"]
 
-[node name="Player" type="Camera3D" unique_id=1096373769 node_paths=PackedStringArray("_flashlight")]
+[node name="Player" type="Camera3D" unique_id=1096373769 node_paths=PackedStringArray("_flashlight", "_rayCast")]
 script = ExtResource("1_g2els")
 _flashlight = NodePath("flashlight")
+_rayCast = NodePath("RayCast3D")
 
 [node name="flashlight" parent="." unique_id=907678344 instance=ExtResource("1_3vyb7")]
 transform = Transform3D(1, 0, 0, 0, 0.078459084, 0.9969173, 0, -0.9969173, 0.078459084, 0.37, -0.185, -0.242)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1358361013]
+target_position = Vector3(0, 0, -20)
+collision_mask = 2
+collide_with_areas = true
